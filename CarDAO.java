@@ -15,7 +15,7 @@ public class CarDAO   {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/user_data", "root", "hari@1230");
+			Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/user_data", "user_name", "password");
 			String query="insert into car ( name, colour, number)"+"values (?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, c.getCarName());
@@ -39,8 +39,8 @@ public class CarDAO   {
 			Car car=new Car();
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/user_data";
-			String user = "root";
-			String password = "hari@1230";
+			String user = "user_name";
+			String password = "password";
 			Connection connection = DriverManager.getConnection(url, user, password);
 			String Query = "select * from car where id=?";
 			PreparedStatement ps = connection.prepareStatement(Query);
